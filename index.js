@@ -33,7 +33,7 @@ app.post('/api/habits', (request, response) => {
   const habit = new Habit({
       name: body.name,
       targetFrequency: body.targetFrequency,
-      comments: body.comments
+      currentStreak: body.currentStreak
   })
 
   habit.save().then(savedHabit => {
@@ -43,8 +43,7 @@ app.post('/api/habits', (request, response) => {
 })
 
 
-const PORT = 3001
-//process.env.PORT
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })

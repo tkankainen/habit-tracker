@@ -1,13 +1,10 @@
+require('dotenv').config();
+
 const mongoose = require('mongoose')
 
-//const url = process.env.MONGODB_URI
-
-const url =
-  `mongodb+srv://fullstack:${password}@cluster0.v3fogtb.mongodb.net/habittracker?retryWrites=true&w=majority`
+const url = process.env.MONGODB_URI
 
 mongoose.set('strictQuery',false)
-
-mongoose.connect(url)
 
 console.log('connecting to', url)
 mongoose.connect(url)
@@ -29,8 +26,9 @@ const habitSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    comments: {
-        type: String
+    currentStreak: {
+        type: Number,
+        required: true
     }
 })
 

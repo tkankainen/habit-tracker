@@ -2,7 +2,7 @@ POST http://localhost:3001/api/habits
 Content-Type: application/json
 
 {
-    "name": "Exercise",
+    "name": "Eat breakfast",
     "targetFrequency": 1,
-    "comments": "Kuntosali/Uinti/Venyttely tms"
+    "currentStreak": 0
 }
