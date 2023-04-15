@@ -1,0 +1,8 @@
+PUT http://localhost:3001/api/habits/643ae25c6d327edb202239b1
+Content-Type: application/json
+
+{
+    "name": "Eat breakfast",
+    "targetFrequency": 1,
+    "currentStreak": 1
+}
