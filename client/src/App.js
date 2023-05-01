@@ -1,11 +1,16 @@
-import './App.css'
 import Habits from './components/Habits';
+import { Wrapper, Title } from './components/Styled';
 
 function App() {
+
   return (
     <div>
-      <h2>Habit tracker</h2>
-      <Habits />
+      <Wrapper>
+        <Title>
+          Habit tracker
+        </Title>
+        <Habits />
+      </Wrapper>
     </div>
   )
 }

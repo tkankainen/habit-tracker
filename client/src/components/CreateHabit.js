@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Input, Button, Title } from './Styled'
 
 const CreateHabit = ({ createHabit }) => {
 
@@ -18,22 +19,20 @@ const CreateHabit = ({ createHabit }) => {
 
   return (
     <div>
-      <h3>create new habit</h3>
+      <Title>create new habit</Title>
 
       <form onSubmit={addHabit}>
         <div>
-          habit name
-          <input
+          <Input
             type="text"
             value={newName}
             id="name"
-            placeholder='name'
+            placeholder='habit name'
             onChange={({ target }) => setNewName(target.value)}
           />
         </div>
         <div>
-          target frequency
-          <input
+          <Input
             type="number"
             value={newTargetFrequency}
             id="target frequency"
@@ -41,7 +40,7 @@ const CreateHabit = ({ createHabit }) => {
             onChange={({ target }) => setNewTargetFrequency(target.value)}
           />
         </div>
-        <button type="submit" className='create-button'>create</button>
+        <Button type="submit" className='create-button'>create</Button>
       </form>
     </div>
   )

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import HabitTable from './HabitTable'
 import habitService from '../services/habits'
 import CreateHabit from './CreateHabit'
 
@@ -34,13 +35,10 @@ const Habits = () => {
 
   return (
     <div>
-    <ul>
-      {habits.map(habit => (
-        <li key={habit.id}>
-            {habit.name} - Current streak {habit.currentStreak} <button onClick={() => deleteBlog(habit)}>remove</button>
-        </li>
-      ))}
-    </ul>
+    <HabitTable 
+      habits={habits}
+      deleteBlog={deleteBlog} 
+    />
     <CreateHabit
       createHabit={createHabit}
     />
