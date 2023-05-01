@@ -3,12 +3,15 @@ import HabitTable from './HabitTable'
 import habitService from '../services/habits'
 import logService from '../services/logs'
 import CreateHabit from './CreateHabit'
+import EditHabit from './EditHabit'
 
 const Habits = () => {
 
+  const [habit, setHabit] = useState(null)
   const [habits, setHabits] = useState([])
   const [logs, setLogs] = useState([])
   const [currentStreak, setCurrentStreak] = useState([])
+  const [editMode, setEditMode] = useState(false)
 
   useEffect(() => {
     habitService.getAll().then(habits =>
@@ -39,6 +42,11 @@ const Habits = () => {
     }
   }
 
+  const showEdit = (habit) => {
+    setHabit(habit)
+    setEditMode(true)
+  }
+
   const markHabitDone = async (habitDone) => {
     try {
       const habit = habits.find(h => h.id === habitDone.id)
@@ -67,18 +75,37 @@ const Habits = () => {
     }
   }
 
-  return (
-    <div>
-    <HabitTable 
-      habits={habits}
-      deleteHabit={deleteHabit}
-      markHabitDone={markHabitDone}
-    />
-    <CreateHabit
-      createHabit={createHabit}
-    />
-  </div>
-  )
+  if (editMode) {
+    return (
+      <EditHabit 
+        habit={habit}
+        onUpdate={(updatedHabit) => {
+          const updatedHabits = habits.map((h) => {
+            if (h.id === updatedHabit.id) {
+              return updatedHabit;
+            }
+            return h;
+          });
+          setHabits(updatedHabits);
+          setEditMode(false);
+        }}
+      />
+    )
+  } else {
+    return (
+      <div>
+      <HabitTable 
+        habits={habits}
+        deleteHabit={deleteHabit}
+        showEdit={showEdit}
+        markHabitDone={markHabitDone}
+      />
+      <CreateHabit
+        createHabit={createHabit}
+      />
+    </div>
+    )
+  }
 }
 
 export default Habits

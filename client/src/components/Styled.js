@@ -4,12 +4,12 @@ export const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   margin-top: 1em;
   `;
 
 export const Wrapper = styled.section`
-    padding: 4em;
+    padding: 3em;
     background: papayawhip;
   `;
 
