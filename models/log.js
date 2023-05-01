@@ -5,7 +5,7 @@ const logSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
-    habit: {
+    habitID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Habit'
     },

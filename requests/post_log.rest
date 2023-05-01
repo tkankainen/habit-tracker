@@ -3,6 +3,6 @@ Content-Type: application/json
 
 {
     "date": "2023-05-01T12:34:56.000Z",
-    "habit": "643ae25c6d327edb202239b1",
-    "comments": "yay"
+    "habitID": "643ae25c6d327edb202239b1",
+    "comments": "yayyy"
 }
