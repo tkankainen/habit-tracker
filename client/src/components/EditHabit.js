@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Input, Button, Title } from './Styled'
+import { Input, Button, Title, Label } from './Styled'
 import habitService from '../services/habits'
 
 const EditHabit = ({ habit, onUpdate }) => {
@@ -28,6 +28,7 @@ const EditHabit = ({ habit, onUpdate }) => {
 
       <form onSubmit={updateHabit}>
         <div>
+          <Label>Habit name</Label>
           <Input
             type="text"
             value={name}
@@ -37,6 +38,7 @@ const EditHabit = ({ habit, onUpdate }) => {
           />
         </div>
         <div>
+          <Label>Target frequency</Label>
           <Input
             type="number"
             value={targetFrequency}
