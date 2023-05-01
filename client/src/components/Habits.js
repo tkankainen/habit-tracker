@@ -17,7 +17,18 @@ const Habits = () => {
       const habit = await habitService.create(event)
       setHabits(habits.concat(habit))
     } catch (exception) {
-      console.log('Error creating habit:', exception.response.data.error)
+      console.log('Error creating habit:', exception)
+    }
+  }
+
+  const deleteBlog = async (habitToRemove) => {
+    if (window.confirm(`Remove habit ${habitToRemove.name}?`)) {
+      try {
+        await habitService.remove(habitToRemove.id)
+        setHabits(habits.filter((habit) => habit.id !== habitToRemove.id))
+      } catch (exception) {
+        console.log('Error deleting habit:', exception)
+      }
     }
   }
 
@@ -26,7 +37,7 @@ const Habits = () => {
     <ul>
       {habits.map(habit => (
         <li key={habit.id}>
-            {habit.name} - Current streak {habit.currentStreak}
+            {habit.name} - Current streak {habit.currentStreak} <button onClick={() => deleteBlog(habit)}>remove</button>
         </li>
       ))}
     </ul>
