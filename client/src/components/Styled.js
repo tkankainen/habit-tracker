@@ -4,6 +4,8 @@ export const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
   color: palevioletred;
+  margin-bottom: 2em;
+  margin-top: 1em;
   `;
 
 export const Wrapper = styled.section`
@@ -22,21 +24,6 @@ export const Button = styled.button`
   border: 2px solid palevioletred;
   border-radius: 3px;
 `;
-
-/*const Button = styled.button`
-  background: #037ef3;
-  color: #fff;
-  font-weight: 600;
-  width: 100%;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 25px 15px;
-  border: 0;
-  font-size: 18px;
-  &:hover {
-    background: #0271da;
-  }
-`;*/
 
 export const Form = styled.div`
   width: 100%;

@@ -1,6 +1,6 @@
 import { Button, Table, Td, Th } from './Styled'
 
-const HabitTable = ({ habits, deleteBlog }) => {
+const HabitTable = ({ habits, deleteHabit, markHabitDone }) => {
     return (
       <Table>
         <thead>
@@ -18,8 +18,8 @@ const HabitTable = ({ habits, deleteBlog }) => {
               <Td>{habit.name}</Td>
               <Td>{habit.targetFrequency} times per day</Td>
               <Td>{habit.currentStreak} days in a row</Td>
-              <Td>LOG</Td>
-              <Td><Button onClick={() => deleteBlog(habit)}>remove</Button></Td>
+              <Td><Button $primary onClick={() => markHabitDone(habit)}>DONE</Button></Td>
+              <Td><Button onClick={() => deleteHabit(habit)}>remove</Button></Td>
             </tr>
           ))}
         </tbody>
