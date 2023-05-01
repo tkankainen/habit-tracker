@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import habitService from '../services/habits'
+import CreateHabit from './CreateHabit'
 
 const Habits = () => {
 
@@ -11,7 +12,17 @@ const Habits = () => {
     )
   }, [])
 
+  const createHabit = async (event) => {
+    try {
+      const habit = await habitService.create(event)
+      setHabits(habits.concat(habit))
+    } catch (exception) {
+      console.log('Error creating habit:', exception.response.data.error)
+    }
+  }
+
   return (
+    <div>
     <ul>
       {habits.map(habit => (
         <li key={habit.id}>
@@ -19,6 +30,10 @@ const Habits = () => {
         </li>
       ))}
     </ul>
+    <CreateHabit
+      createHabit={createHabit}
+    />
+  </div>
   )
 }
 
