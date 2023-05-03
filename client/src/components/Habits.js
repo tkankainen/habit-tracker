@@ -10,6 +10,7 @@ const Habits = () => {
   const [habit, setHabit] = useState(null)
   const [habits, setHabits] = useState([])
   const [logs, setLogs] = useState([])
+  // eslint-disable-next-line
   const [currentStreak, setCurrentStreak] = useState([])
   const [editMode, setEditMode] = useState(false)
 
