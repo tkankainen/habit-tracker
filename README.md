@@ -52,6 +52,6 @@ Habit tracker -sovellusta voisi jatkokehittää monella tapaa. Tällä hetkellä
 - käyttäjät, kirjautuminen, autentikointi ja auktorisointi
 - tapojen järjestyksen muuttaminen
 
-#### Lähteet
+### Lähteet
 
 Apuna seminaarityön tekemisessä on käytetty etenkin HY:n kurssin Full Stack Open [materiaalia](https://fullstackopen.com/osa3/tietojen_tallettaminen_mongo_db_tietokantaan), [MongoDB dokumentaatiota](https://www.mongodb.com/docs/), [Docker dokumentaatiota](https://docs.docker.com/) sekä [styled-components dokumentaatiota](https://styled-components.com/docs).
