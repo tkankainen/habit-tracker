@@ -17,6 +17,10 @@ MongoDB:n opettelu oli kiinnostavaa, mutta vaati myös perehtymistä, koska sen 
 
 Toteuttamani sovellus oli pieni, ja MongoDB:n hyödyt tulisivat varmasti vielä paremmin esiin sovellusta laajennettaessa, esimerkiksi lisäämällä käyttäjienhallinnan tai muistutusominaisuuden.
 
+#### Mongoose
+
+Mongoose on object document mapper (ODM), ja sen avulla JavaScript-olioiden tallettaminen MongoDB:n dokumenteiksi on suoraviivaista. Mongoose tarjoaa yksinkertaistetun käyttöliittymän MongoDB-tietokantaan. Lisäksi Mongoosen avulla voidaan määritellä MongoDB-tietokannan skeema, joka määrittelee, miten tietokantaan tallennetut dokumentit ovat rakennettuja.
+
 #### Express
 
 Express on web-sovelluskehys, jota käytettiin sovelluksen backendin toteuttamiseen. Se tarjoaa paljon hyödyllisiä toimintoja, kuten reitityksen ja middlewaren käytön.
